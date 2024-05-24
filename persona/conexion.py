@@ -50,15 +50,13 @@ def listarPersona(tipo: int):
         with db.connect(PATH) as conn:
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM PERSONA WHERE TIPO = (?);", (valorTipo,))
-            result = cursor.fetchall()
 
     except Exception as e:
         print("No se ha podido listar, Error:", e)
     else:
-        if len(result) < 1: # Controlar el caso de que no encuentre resultados
-            return "Sin resultados! " 
-        
+
         listPerson = list()
-        for person in result:
-            listPerson.append(person)
+        for person in cursor:
+            persona = Persona(person[0], person[1], person[2], person[3], person[4])
+            listPerson.append(persona)
         return listPerson

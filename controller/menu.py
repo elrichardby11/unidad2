@@ -15,7 +15,7 @@ def registerPerson(tipo: int): # For the option 1 and 2
         valorTipo = "estudiante"
     elif tipo == 2:
         valorTipo = "docente"
-    else: 
+    else:
         return "Error al encontrar el valor 'Tipo'"
 
     rut = input(f"Ingrese el RUT del {valorTipo}: ")
@@ -60,6 +60,7 @@ def listPerson(option: int): # For the option 7 y 8
     personas = listarPersona(option)
     if not personas:
         return "No se encontraron resultados! "
+
     for persona in personas:
         print(persona)
     time.sleep(TIME)

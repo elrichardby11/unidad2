@@ -50,7 +50,7 @@ def asignarDocente():
 
     opcionCurso = input("Ingrese la sigla del curso para asignarla a un docente: ")
 
-    if not (any(curso[0] == opcionCurso for curso in cursos)): # Buscar si existe "sigla" dentro del resultado de la consulta
+    if not (any(curso.sigla == opcionCurso for curso in cursos)): # Buscar si existe "sigla" dentro del resultado de la consulta
         return "No existe la sigla ingresada. "
 
     for docente in docentes:
@@ -58,7 +58,7 @@ def asignarDocente():
 
     opcionDocente = input(f'Ingrese el RUT del docente para el curso "{opcionCurso}": ')
 
-    if not (any(docente[0] == opcionDocente for docente in docentes)): # Buscar si existe "RUT" del docente dentro del resultado de la consulta
+    if not (any(docente.rut == opcionDocente for docente in docentes)): # Buscar si existe "RUT" del docente dentro del resultado de la consulta
         return "El rut ingresado no coincide con ningun docente"
 
     try:
@@ -85,7 +85,8 @@ def listarCurso():
 
     else:
         listCursos = list()
-        for curso in cursor:
+        for fila in cursor:
+            curso = Curso(fila[0], fila[1])
             listCursos.append(curso)
         return listCursos
         

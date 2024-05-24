@@ -34,35 +34,37 @@ def main():
         if opcion == 1:
             print(registerPerson(opcion))
 
-        if opcion == 2:
+        elif opcion == 2:
             registerPerson(opcion)
         
-        if opcion == 3:
+        elif opcion == 3:
             registerCurso()
         
-        if opcion == 4:
+        elif opcion == 4:
             asigTeacher()
         
-        if opcion == 5:
+        elif opcion == 5:
             enrollSudent()
         
-        if opcion == 6 :
+        elif opcion == 6 :
             unenrollStudent()
 
-        if opcion == 7:
-            listPerson(opcion)
+        elif opcion == 7:
+            print(listPerson(opcion))
         
-        if opcion == 8:
-            listPerson(opcion)
+        elif opcion == 8:
+            print(listPerson(opcion))
         
-        if opcion == 9:
-            listCurso()
+        elif opcion == 9:
+            print(listCurso())
         
-        if opcion == 10:
+        elif opcion == 10:
             print(listEnrollments())
 
-        if opcion == 11:
+        elif opcion == 11:
             goodBye()
             break
 
+        else:
+            print("\nIngrese un número válido! ")
 main()

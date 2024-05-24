@@ -1,5 +1,7 @@
 class Persona():
     def __init__(self, rut: str, nombre: str, apellido: str, fechaNacimiento: str, tipo:str) -> None:
+        if len(rut) > 12:
+            raise ValueError("La longitud de la cantidad a exedido su limite para el valor de RUT. ")
         self.__rut = rut
         self.__nombre = nombre
         self.__apellido = apellido
